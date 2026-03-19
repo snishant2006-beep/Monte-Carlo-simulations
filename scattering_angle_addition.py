@@ -80,7 +80,7 @@ for i in range(n_steps):
         if scale > 0:
             p *= scale
 
-        # --- scattering: rotate p about a random axis perpendicular to p ---
+        # scattering: rotate p about a random axis perpendicular to p 
         theta = np.random.normal(0.0, scatter_angle_rms)
         u = p / (np.linalg.norm(p) + 1e-12)
         randv = np.random.randn(3)
