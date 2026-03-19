@@ -10,14 +10,13 @@ Original file is located at
 import numpy as np
 import matplotlib.pyplot as plt
 
-# -----------------------------
+
 # Parameters (normalized units)
-# -----------------------------
 dt = 1e-3
 n_steps = 15000
-B = 2.0
+B = 2.0          #field strength
 q = -1.0         # charge
-m = 1.0
+m = 1.0          #mass
 gamma0 = 10.0
 
 # Initial momentum
@@ -50,9 +49,9 @@ def boris_push(p, B, dt):
 # Sample next interaction
 remaining_path = np.random.exponential(mean_free_path)
 
-# -----------------------------
+
 # Main loop
-# -----------------------------
+
 for i in range(n_steps):
     traj[i] = x
     g = gamma(p)
@@ -79,9 +78,9 @@ for i in range(n_steps):
         z_vals.append(x[2])
         remaining_path = np.random.exponential(mean_free_path)
 
-# -----------------------------
+
 # Plots
-# -----------------------------
+
 plt.figure()
 plt.plot(traj[:,2], traj[:,0])
 plt.xlabel("z")
